@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GEM - Good Enough Manipulator</title>
+    <meta
+      name="description"
+      content="GEM is an affordable 7 degree of freedom humanoid arm with 1.2 kg payload, 3D printed parts, leader-arm teleoperation, and LeRobot control."
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="./assets/css/site.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+          "three/": "https://unpkg.com/three@0.158.0/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="GEM home">
+        <img src="./assets/media/logo.webp" alt="" />
+        <span>GEM</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#arm">Arm</a>
+        <a href="#build">Build</a>
+        <a href="#bom">BOM</a>
+        <a href="#control">Control</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-bg" src="./assets/media/product.webp" alt="GEM humanoid arm render" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Good Enough Manipulator</p>
+          <h1 id="hero-title">GEM</h1>
+          <p class="hero-copy">
+            A useful humanoid arm for hobbyists and researchers: 7 degrees of freedom, up to
+            1.2 kg payload, fully 3D printed structure, and a target build cost under $500.
+          </p>
+          <div class="hero-actions">
+            <a class="contrast" href="https://github.com/Joeclinton1/gem" role="button" data-icon="github">GitHub files</a>
+            <a class="secondary" href="#build" role="button" data-icon="list-checks">Build guide</a>
+          </div>
+        </div>
+        <div class="hero-stats" aria-label="Key specifications">
+          <div><strong>7</strong><span>DOF</span></div>
+          <div><strong>1.2 kg</strong><span>payload</span></div>
+          <div><strong>&lt;$500</strong><span>arm BOM</span></div>
+          <div><strong>$120</strong><span>leader arm</span></div>
+        </div>
+      </section>
+
+      <section class="section intro-grid" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">Why it exists</p>
+          <h2 id="intro-title">A low-cost arm that is useful enough for real manipulation work.</h2>
+        </div>
+        <div>
+          <p>
+            SO-100 introduced thousands of people to robotics, but its 5 DOF layout, roughly
+            450 g payload, and limited precision make many research tasks hard. GEM keeps the
+            open, accessible spirit while adding the payload, reach, cameras, and control
+            stack needed for data collection and policy training.
+          </p>
+        </div>
+      </section>
+
+      <section id="arm" class="section viewer-section" aria-labelledby="viewer-title">
+        <div class="section-heading">
+          <p class="eyebrow">Live model</p>
+          <h2 id="viewer-title">Animated 3D arm from the GEM URDF</h2>
+          <p>
+            Drag to orbit. The model is loaded from the same URDF and mesh bundle used for
+            the project files.
+          </p>
+        </div>
+        <div class="viewer-layout">
+          <div class="viewer-panel">
+            <urdf-viewer id="gem-viewer" up="+Z" display-shadow ambient-color="#8ca4a0"></urdf-viewer>
+            <div class="viewer-toolbar" aria-label="Viewer controls">
+              <button id="toggle-animation" class="secondary" type="button" data-icon="pause">Pause</button>
+              <button id="reset-viewer" class="secondary" type="button" data-icon="rotate-ccw">Reset view</button>
+            </div>
+          </div>
+          <div class="spec-list" aria-label="GEM specifications">
+            <div><span>Payload</span><strong>Up to 1.2 kg</strong></div>
+            <div><span>Motion</span><strong>7 degrees of freedom</strong></div>
+            <div><span>Fabrication</span><strong>Fully 3D printed structure</strong></div>
+            <div><span>Sensing</span><strong>Head and wrist cameras</strong></div>
+            <div><span>Teleop</span><strong>Leader arm, VR joystick, phone</strong></div>
+            <div><span>Training</span><strong>LeRobot VLA pipeline</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section media-section" aria-labelledby="tasks-title">
+        <div class="section-heading">
+          <p class="eyebrow">Tasks</p>
+          <h2 id="tasks-title">Manipulation targets that are difficult on smaller hobby arms.</h2>
+        </div>
+        <div class="task-grid">
+          <article>
+            <img src="./assets/media/payload.webp" alt="GEM lifting a payload" />
+            <h3>Payload</h3>
+            <p>Move heavier objects with a motor configuration designed around useful torque.</p>
+          </article>
+          <article>
+            <img src="./assets/media/stacking.webp" alt="GEM stacking blocks" />
+            <h3>Dexterity</h3>
+            <p>Stack, insert, grasp, and recover with a full 7 DOF workspace.</p>
+          </article>
+          <article>
+            <img src="./assets/media/leader.webp" alt="Leader arm controlling GEM" />
+            <h3>Leader control</h3>
+            <p>The custom $120 leader arm makes dataset collection natural and precise.</p>
+          </article>
+          <article>
+            <img src="./assets/media/phone.webp" alt="Phone control interface for GEM" />
+            <h3>Alternate teleop</h3>
+            <p>Use VR joystick control or phone control when a leader arm is not desirable.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="control" class="section control-section" aria-labelledby="control-title">
+        <div class="section-heading">
+          <p class="eyebrow">Control stack</p>
+          <h2 id="control-title">Built around the GEM branch of LeRobot.</h2>
+          <p>
+            Control code lives in
+            <a href="https://github.com/Joeclinton1/lerobot/tree/gem">Joeclinton1/lerobot on the <code>gem</code> branch</a>.
+          </p>
+        </div>
+        <div class="control-grid">
+          <article>
+            <h3>1. Install the fork</h3>
+            <pre><code>git clone https://github.com/Joeclinton1/lerobot
+cd lerobot
+git switch gem
+pip install -e .</code></pre>
+          </article>
+          <article>
+            <h3>2. Configure hardware</h3>
+            <p>
+              Use the GEM follower robot implementation in
+              <code>src/lerobot/robots/gem_follower</code>, then calibrate motors and cameras.
+            </p>
+          </article>
+          <article>
+            <h3>3. Collect and train</h3>
+            <p>
+              Record head and wrist camera data with the leader arm, then train pi0.5 or another
+              LeRobot policy from the standardized camera setup.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="build" class="section build-section" aria-labelledby="build-title">
+        <div class="section-heading">
+          <p class="eyebrow">Build manual</p>
+          <h2 id="build-title">Step-by-step assembly, ready for rendered instruction images.</h2>
+          <p>
+            The manual is data-driven so each step can be paired with a rendered photo from
+            the assembly tool as the build sequence is finalized.
+          </p>
+        </div>
+        <div id="build-steps" class="build-steps" aria-live="polite"></div>
+      </section>
+
+      <section id="bom" class="section bom-section" aria-labelledby="bom-title">
+        <div class="section-heading">
+          <p class="eyebrow">Bill of materials</p>
+          <h2 id="bom-title">Current GEM BOM from the project spreadsheet.</h2>
+        </div>
+        <div class="bom-summary" id="bom-summary"></div>
+        <div class="table-wrap">
+          <table id="bom-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Unit</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section print-section" aria-labelledby="print-title">
+        <div class="section-heading">
+          <p class="eyebrow">Fabrication</p>
+          <h2 id="print-title">Print, assemble, calibrate, collect.</h2>
+        </div>
+        <div class="print-strip">
+          <img src="./assets/media/print-start.webp" alt="GEM 3D print starting" />
+          <img src="./assets/media/print-mid.webp" alt="GEM 3D print in progress" />
+          <img src="./assets/media/print-finished.webp" alt="Finished GEM 3D printed parts" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>GEM - Good Enough Manipulator</span>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script type="module" src="./assets/js/gem-viewer.js"></script>
+    <script type="module" src="./assets/js/site.js"></script>
+  </body>
+</html>

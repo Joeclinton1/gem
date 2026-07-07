@@ -1,0 +1,214 @@
+{
+  "sourceWorkbook": "GEM BOM.xlsx",
+  "categories": [
+    { "name": "Motors", "total": 366.53 },
+    { "name": "Miscellaneous", "total": 50.55 },
+    { "name": "PincOpen", "total": 2.84 }
+  ],
+  "totals": {
+    "units": 57,
+    "grand": 444.15
+  },
+  "items": [
+    {
+      "category": "Motors",
+      "name": "SteadyWin Gim 6010 (GDS68-DE)",
+      "link": "https://www.aliexpress.com/item/1005006339337286.html?spm=a2g0o.order_list.order_list_main.5.6ec71802sj6jHl",
+      "unitPrice": 120,
+      "quantity": 1,
+      "total": 120
+    },
+    {
+      "category": "Motors",
+      "name": "Feetech sts3095-C001",
+      "link": "https://www.alibaba.com/product-detail/STS3095-8-4V-105KG-Full-Metal_1601634759637.html?spm=a2700.prosearch.normal_offer.d_title.713a67af419FjU&priceId=d07ab5c885a9428daae260874bee7760",
+      "unitPrice": 49,
+      "quantity": 2,
+      "total": 98
+    },
+    {
+      "category": "Motors",
+      "name": "Feetech sts3250-C002",
+      "link": "https://www.alibaba.com/product-detail/Feetech-Low-Cost-12V-50KG-TTL_1601545722009.html?spm=a2700.prosearch.normal_offer.d_title.2cc767afk5CnU5&priceId=3c8d2b81dbeb4cb3a78d9f23a56902ca",
+      "unitPrice": 45,
+      "quantity": 1,
+      "total": 45
+    },
+    {
+      "category": "Motors",
+      "name": "Feetech sts3215-C018",
+      "link": "https://www.alibaba.com/product-detail/SO-ARM101-Low-Cost-AI-Arm_1601381245887.html?spm=a2700.prosearch.normal_offer.d_title.36d367afZ7etmD&selectedCarrierCode=SEMI_MANAGED_ECONOMIC%40%40ECONOMY&priceId=10735e6871f240d5bd5a3c4443a824e0",
+      "unitPrice": 13.9,
+      "quantity": 4,
+      "total": 55.6
+    },
+    {
+      "category": "Motors",
+      "name": "Feetech 260mm cable",
+      "link": "",
+      "unitPrice": 0.31,
+      "quantity": 3,
+      "total": 0.93
+    },
+    {
+      "category": "Motors",
+      "name": "Feetech shipping / PayPal",
+      "link": "",
+      "unitPrice": 47,
+      "quantity": 1,
+      "total": 47
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Buck converter 5A",
+      "link": "https://www.aliexpress.com/item/1005002313624926.html",
+      "unitPrice": 2.25,
+      "quantity": 2,
+      "total": 4.5
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "24V 10A 240W PSU",
+      "link": "https://www.aliexpress.com/item/1005001499518150.html",
+      "unitPrice": 16.78,
+      "quantity": 1,
+      "total": 16.78
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Waveshare Serial Bus Board",
+      "link": "https://www.aliexpress.com/item/1005010500076777.html",
+      "unitPrice": 9.64,
+      "quantity": 1,
+      "total": 9.64
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Emergency stop button",
+      "link": "https://www.aliexpress.com/item/1005005089716170.html",
+      "unitPrice": 6.58,
+      "quantity": 1,
+      "total": 6.58
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Power cable",
+      "link": "https://www.aliexpress.com/item/1005001299125752.html",
+      "unitPrice": 1.4,
+      "quantity": 1,
+      "total": 1.4
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "1m 20awg red/black wire",
+      "link": "https://www.aliexpress.com/item/1005007251965003.html",
+      "unitPrice": 0.63,
+      "quantity": 1,
+      "total": 0.63
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Bearing 6812-2RS",
+      "link": "https://www.aliexpress.com/item/4000887923434.html",
+      "unitPrice": 5.2,
+      "quantity": 1,
+      "total": 5.2
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Bearing 6704ZZ",
+      "link": "https://www.amazon.co.uk/TOP-VIGOR-Industrial-Skateboard-Electrical-Instrument/dp/B0D4DN99KF/",
+      "unitPrice": 2.91,
+      "quantity": 2,
+      "total": 5.82
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "30x30 aluminum tube",
+      "link": "www.aluminium-online.co.uk",
+      "unitPrice": 6.12,
+      "quantity": 1,
+      "total": 6.12
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "USB expansion board",
+      "link": "https://thepihut.com/products/mini-4-port-usb-c-usb-2-0-hub",
+      "unitPrice": 9.93,
+      "quantity": 1,
+      "total": 9.93
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "USB cable 15cm",
+      "link": "https://www.aliexpress.com/item/1005010458120718.html",
+      "unitPrice": 2.65,
+      "quantity": 2,
+      "total": 5.3
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "M3x8 Socket cap screw",
+      "link": "https://www.aliexpress.com/item/1005007137661687.html",
+      "unitPrice": 0.05,
+      "quantity": 32,
+      "total": 1.6
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "M3x10 Socket cap screw",
+      "link": "https://fr.aliexpress.com/item/1005006869763828.html",
+      "unitPrice": 0.04,
+      "quantity": 32,
+      "total": 1.28
+    },
+    {
+      "category": "PincOpen",
+      "name": "M3x16 steel dowel",
+      "link": "https://www.aliexpress.com/item/33011975019.html",
+      "unitPrice": 0.11,
+      "quantity": 4,
+      "total": 0.44
+    },
+    {
+      "category": "PincOpen",
+      "name": "M3x24 steel dowel",
+      "link": "https://fr.aliexpress.com/item/33011975019.html",
+      "unitPrice": 0.2,
+      "quantity": 4,
+      "total": 0.8
+    },
+    {
+      "category": "PincOpen",
+      "name": "3x6x5 brass sleeve bearing",
+      "link": "https://fr.aliexpress.com/item/1005005270665270.html",
+      "unitPrice": 0.27,
+      "quantity": 4,
+      "total": 1.08
+    },
+    {
+      "category": "PincOpen",
+      "name": "M3x10 Socket cap screw",
+      "link": "https://fr.aliexpress.com/item/1005006869763828.html",
+      "unitPrice": 0.04,
+      "quantity": 4,
+      "total": 0.16
+    },
+    {
+      "category": "PincOpen",
+      "name": "M3x5x4.2 Brass insert",
+      "link": "https://fr.aliexpress.com/item/1005003582355741.html",
+      "unitPrice": 0.04,
+      "quantity": 4,
+      "total": 0.16
+    },
+    {
+      "category": "PincOpen",
+      "name": "M2.5x8 sunken screw",
+      "link": "https://fr.aliexpress.com/item/1005006883251273.html",
+      "unitPrice": 0.01,
+      "quantity": 20,
+      "total": 0.2
+    }
+  ]
+}

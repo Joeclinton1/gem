@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "phase": "Print prep",
+    "title": "Print and inspect all structural parts",
+    "description": "Print the base, shoulder, elbow, wrist, gripper, and camera mounts. Remove supports, check bearing pockets, and keep matching left-right parts together.",
+    "image": "./assets/build-images/001-print-and-inspect.webp"
+  },
+  {
+    "id": 2,
+    "phase": "Base",
+    "title": "Install the base bearing and first motor",
+    "description": "Seat the 6812 bearing in the base, install the first drive motor, and verify the rotating stage moves freely before fastening.",
+    "image": "./assets/build-images/002-base-bearing-motor.webp"
+  },
+  {
+    "id": 3,
+    "phase": "Shoulder",
+    "title": "Build the shoulder motor stack",
+    "description": "Slide the shoulder motors into the printed casing, route the Feetech cables, and loosely fasten before final alignment.",
+    "image": "./assets/build-images/003-shoulder-motor-stack.webp"
+  },
+  {
+    "id": 4,
+    "phase": "Upper arm",
+    "title": "Attach link 2 and link 3",
+    "description": "Fit the upper-arm links onto the shoulder output, add dowels or sleeves where called out, and confirm the joint range is clear.",
+    "image": "./assets/build-images/004-upper-arm-links.webp"
+  },
+  {
+    "id": 5,
+    "phase": "Elbow",
+    "title": "Install the elbow drive",
+    "description": "Insert the elbow motor, align the horn or output spline, and fasten the housing without pinching cables.",
+    "image": "./assets/build-images/005-elbow-drive.webp"
+  },
+  {
+    "id": 6,
+    "phase": "Forearm",
+    "title": "Assemble the forearm link",
+    "description": "Join the forearm shells, add bearings and inserts, then check that the cable path remains serviceable.",
+    "image": "./assets/build-images/006-forearm-link.webp"
+  },
+  {
+    "id": 7,
+    "phase": "Wrist",
+    "title": "Build the 3 DOF wrist",
+    "description": "Install the wrist motors, align the wrist roll and pitch axes, and confirm there is no printed-part interference.",
+    "image": "./assets/build-images/007-wrist-assembly.webp"
+  },
+  {
+    "id": 8,
+    "phase": "Gripper",
+    "title": "Assemble the PincOpen gripper",
+    "description": "Fit the cam, rods, pins, sleeves, and fingertip parts. The gripper should open and close smoothly before mounting.",
+    "image": "./assets/build-images/008-pincopen-gripper.webp"
+  },
+  {
+    "id": 9,
+    "phase": "Cameras",
+    "title": "Mount head and wrist cameras",
+    "description": "Install the standardized head and wrist cameras so datasets match the expected GEM physical setup.",
+    "image": "./assets/build-images/009-camera-mounts.webp"
+  },
+  {
+    "id": 10,
+    "phase": "Electronics",
+    "title": "Wire power, bus board, USB, and emergency stop",
+    "description": "Connect the 24 V PSU, buck converters, serial bus board, USB hub, and emergency stop. Label each motor cable before closing the arm.",
+    "image": "./assets/build-images/010-electronics.webp"
+  },
+  {
+    "id": 11,
+    "phase": "Leader arm",
+    "title": "Build and test the leader arm",
+    "description": "Assemble the low-cost leader arm, confirm its joint directions, and verify follower motion before collecting data.",
+    "image": "./assets/build-images/011-leader-arm.webp"
+  },
+  {
+    "id": 12,
+    "phase": "Calibration",
+    "title": "Calibrate GEM in LeRobot",
+    "description": "Switch to the LeRobot gem branch, calibrate motors and cameras, then record a short dataset to validate the complete build.",
+    "image": "./assets/build-images/012-lerobot-calibration.webp"
+  }
+]
