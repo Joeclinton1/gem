@@ -2,12 +2,12 @@
   "sourceWorkbook": "GEM BOM.xlsx",
   "categories": [
     { "name": "Motors", "total": 366.53 },
-    { "name": "Miscellaneous", "total": 105.4 },
+    { "name": "Miscellaneous", "total": 106.26 },
     { "name": "PincOpen", "total": 2.84 }
   ],
   "totals": {
     "units": 136,
-    "grand": 474.77
+    "grand": 475.63
   },
   "items": [
     {
@@ -108,19 +108,19 @@
     },
     {
       "category": "Miscellaneous",
-      "name": "WAGO 221-413 3-conductor lever connector",
-      "link": "https://www.homedepot.com/p/WAGO-221-413-Lever-Nuts-3-Conductor-Splicing-Connectors-12-24AWG-50-Pack-0221413K00-012/326483207",
-      "unitPrice": 0.43,
+      "name": "JOYELEC 1-in 3-out lever connector",
+      "link": "https://www.amazon.co.uk/JOYELEC-Electrical-Connectors-Conductor-Connector/dp/B0FJ1DR56T",
+      "unitPrice": 0.49,
       "quantity": 2,
-      "total": 0.86
+      "total": 0.98
     },
     {
       "category": "Miscellaneous",
-      "name": "KF301 2-pin screw terminal block",
-      "link": "https://www.aliexpress.com/item/32859654021.html",
-      "unitPrice": 0.06,
+      "name": "WAGO 222-412 2-conductor lever connector",
+      "link": "https://cpc.farnell.com/wago/222-412/terminal-block-w-lever-2cond-4mm%C2%B2/dp/CN12061",
+      "unitPrice": 0.43,
       "quantity": 2,
-      "total": 0.12
+      "total": 0.86
     },
     {
       "category": "Miscellaneous",
