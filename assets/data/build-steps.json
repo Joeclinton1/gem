@@ -267,16 +267,23 @@
   },
   {
     "id": 39,
-    "phase": "Cameras",
-    "title": "Mount head and wrist cameras",
-    "description": "Install the standardized head and wrist cameras so datasets match the expected GEM physical setup.",
-    "image": "./assets/build-images/037-wrist-camera.webp"
+    "phase": "Wiring",
+    "title": "Wire the E-STOP",
+    "description": "1. Cut the barrel jack off the 24v DC power supply 2. split the line into live and ground 3. tin and flatten the ends. 4. Connect to estop and terminal block like shown. 5. For output do the same but with the power cable",
+    "image": "./assets/build-images/estop wiring.png"
   },
   {
     "id": 40,
-    "phase": "Electronics",
-    "title": "Wire power, bus board, USB, and emergency stop",
-    "description": "Connect the 24 V PSU, buck converters, serial bus board, USB hub, and emergency stop. Label each motor cable before closing the arm.",
-    "image": "./assets/media/screwdriver.webp"
+    "phase": "Mount",
+    "title": "Build the mount.",
+    "description": "Build the mount, by putting M5 socket screws through the holes, connecting to hex nuts on the other sides. Then insert a 20x20 length 30cm aluminium tube into it. The top part of the mount does the same on the other side.",
+    "image": "./assets/build-images/mount.png"
+  },
+  {
+    "id": 41,
+    "phase": "Wiring",
+    "title": "Complete the wiring",
+    "description": "Feed the power cable after the estop through the base mount entrance hole. Split it into two and then connect each wire to the 3 way splitter. To the power line connect 2x red 20awg wire. To the ground line, connect 2x black 20awg wire, connect the steadywin cable also. Feed everything through the top mount, then solder the non-steadywin lines to the 5A buck converters. Connect the steadywin line to the steadywin. Connect one buck converter to the waveshare serial board.",
+    "image": "./assets/build-images/wiring.png"
   }
 ]
