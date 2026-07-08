@@ -303,6 +303,79 @@ urdf-viewer {
   background: var(--surface);
 }
 
+.motor-section {
+  background: #202322;
+  color: #fff;
+}
+
+.motor-section h2,
+.motor-section h3 {
+  color: #fff;
+}
+
+.motor-section .eyebrow {
+  color: #8fd0c5;
+}
+
+.motor-section .section-heading p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.motor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.motor-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background: #0c0d0d;
+}
+
+.motor-figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+}
+
+.motor-points {
+  display: grid;
+  gap: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.motor-points article {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-height: 160px;
+  padding: 22px;
+  background: #2a2e2c;
+}
+
+.motor-points span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #d5a11e;
+  color: #141513;
+  font-weight: 900;
+}
+
+.motor-points p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
 .task-grid,
 .control-grid,
 .build-steps {
@@ -467,8 +540,13 @@ code {
   color: var(--ink);
 }
 
+.build-step-body p {
+  color: #303632;
+  line-height: 1.6;
+}
+
 .build-step-kicker {
-  color: var(--accent-3);
+  color: #7d2f24;
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -580,6 +658,7 @@ footer a {
   .hero-stats,
   .intro-grid,
   .viewer-layout,
+  .motor-layout,
   .task-grid,
   .control-grid,
   .build-steps,
@@ -592,6 +671,10 @@ footer a {
   urdf-viewer {
     min-height: 520px;
     height: 520px;
+  }
+
+  .motor-figure img {
+    min-height: 0;
   }
 }
 

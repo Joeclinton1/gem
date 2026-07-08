@@ -27,6 +27,7 @@
         <span>GEM</span>
       </a>
       <nav aria-label="Primary">
+        <a href="#motors">Motors</a>
         <a href="#arm">Arm</a>
         <a href="#build">Build</a>
         <a href="#bom">BOM</a>
@@ -70,6 +71,41 @@
             open, accessible spirit while adding the payload, reach, cameras, and control
             stack needed for data collection and policy training.
           </p>
+        </div>
+      </section>
+
+      <section id="motors" class="section motor-section" aria-labelledby="motor-title">
+        <div class="section-heading">
+          <p class="eyebrow">Motor layout</p>
+          <h2 id="motor-title">Payload where it counts.</h2>
+          <p>
+            GEM puts a Steadywin QDD at the shoulder and uses low-cost Feetech servos
+            through the rest of the arm. The result is unusual payload for the price:
+            torque is concentrated near the base, while lighter joints keep the moving
+            mass and bill of materials low. That is what gives GEM its payload-to-cost ratio.
+          </p>
+        </div>
+        <div class="motor-layout">
+          <figure class="motor-figure">
+            <img src="./assets/media/motors-labelled.png" alt="GEM arm with each motor labelled by joint number and model" />
+          </figure>
+          <div class="motor-points" aria-label="Motor configuration summary">
+            <article>
+              <span>1</span>
+              <h3>QDD shoulder</h3>
+              <p>High torque is placed at the joint that carries the most load.</p>
+            </article>
+            <article>
+              <span>2-4</span>
+              <h3>Strong mid-arm servos</h3>
+              <p>STS3095 and STS3250 joints handle reach and lifting without dominating cost.</p>
+            </article>
+            <article>
+              <span>5-8</span>
+              <h3>Light distal joints</h3>
+              <p>STS3215 servos keep the wrist and gripper compact, cheap, and responsive.</p>
+            </article>
+          </div>
         </div>
       </section>
 
