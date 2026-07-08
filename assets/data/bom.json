@@ -2,12 +2,12 @@
   "sourceWorkbook": "GEM BOM.xlsx",
   "categories": [
     { "name": "Motors", "total": 366.53 },
-    { "name": "Miscellaneous", "total": 50.55 },
+    { "name": "Miscellaneous", "total": 47.51 },
     { "name": "PincOpen", "total": 2.84 }
   ],
   "totals": {
     "units": 57,
-    "grand": 444.15
+    "grand": 441.11
   },
   "items": [
     {
@@ -116,11 +116,11 @@
     },
     {
       "category": "Miscellaneous",
-      "name": "Bearing 6704ZZ",
-      "link": "https://www.amazon.co.uk/TOP-VIGOR-Industrial-Skateboard-Electrical-Instrument/dp/B0D4DN99KF/",
-      "unitPrice": 2.91,
+      "name": "Bearing 6806-2RS",
+      "link": "https://www.aliexpress.com/item/1005007420073930.html",
+      "unitPrice": 1.39,
       "quantity": 2,
-      "total": 5.82
+      "total": 2.78
     },
     {
       "category": "Miscellaneous",
