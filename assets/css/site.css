@@ -408,7 +408,6 @@ urdf-viewer {
 .task-grid h3,
 .build-step h3,
 .bom-section h2,
-.print-section h2,
 .media-section h2,
 .build-section h2,
 .intro-grid h2,
@@ -605,24 +604,6 @@ td a {
   word-break: break-word;
 }
 
-.print-section {
-  background: #e3ded2;
-}
-
-.print-strip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.print-strip img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -662,8 +643,7 @@ footer a {
   .task-grid,
   .control-grid,
   .build-steps,
-  .bom-summary,
-  .print-strip {
+  .bom-summary {
     grid-template-columns: 1fr;
   }
 

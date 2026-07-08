@@ -2,12 +2,12 @@
   "sourceWorkbook": "GEM BOM.xlsx",
   "categories": [
     { "name": "Motors", "total": 366.53 },
-    { "name": "Miscellaneous", "total": 80.19 },
+    { "name": "Miscellaneous", "total": 105.4 },
     { "name": "PincOpen", "total": 2.84 }
   ],
   "totals": {
-    "units": 59,
-    "grand": 473.79
+    "units": 136,
+    "grand": 474.77
   },
   "items": [
     {
@@ -105,6 +105,22 @@
       "unitPrice": 0.63,
       "quantity": 1,
       "total": 0.63
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "WAGO 221-413 3-conductor lever connector",
+      "link": "https://www.homedepot.com/p/WAGO-221-413-Lever-Nuts-3-Conductor-Splicing-Connectors-12-24AWG-50-Pack-0221413K00-012/326483207",
+      "unitPrice": 0.43,
+      "quantity": 2,
+      "total": 0.86
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "KF301 2-pin screw terminal block",
+      "link": "https://www.aliexpress.com/item/32859654021.html",
+      "unitPrice": 0.06,
+      "quantity": 2,
+      "total": 0.12
     },
     {
       "category": "Miscellaneous",
