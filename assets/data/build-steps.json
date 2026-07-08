@@ -1,86 +1,282 @@
 [
   {
     "id": 1,
-    "phase": "Print prep",
-    "title": "Print and inspect all structural parts",
-    "description": "Print the base, shoulder, elbow, wrist, gripper, and camera mounts. Remove supports, check bearing pockets, and keep matching left-right parts together.",
-    "image": "./assets/build-images/001-print-and-inspect.webp"
+    "phase": "3D printing",
+    "title": "Print all parts",
+    "description": "3D print all the plastic parts. Using the 'all parts' STL file is recommended. Infill is 15%, support on built plate only.",
+    "image": "./assets/build-images/gem 3d printed.png"
   },
   {
     "id": 2,
-    "phase": "Base",
-    "title": "Install the base bearing and first motor",
-    "description": "Seat the 6812 bearing in the base, install the first drive motor, and verify the rotating stage moves freely before fastening.",
-    "image": "./assets/build-images/002-base-bearing-motor.webp"
+    "phase": "Link 1",
+    "title": "Press link 1 onto motor 1",
+    "description": "Press the motor 1 bearing mount onto the GIM6010-8. This is a press-fit part; the extra screw holes are available if you want a more permanent assembly.",
+    "image": "./assets/build-images/002-new-assembly-step.webp"
   },
   {
     "id": 3,
-    "phase": "Shoulder",
-    "title": "Build the shoulder motor stack",
-    "description": "Slide the shoulder motors into the printed casing, route the Feetech cables, and loosely fasten before final alignment.",
-    "image": "./assets/build-images/003-shoulder-motor-stack.webp"
+    "phase": "Link 1",
+    "title": "Insert the motor 1 bearing",
+    "description": "Seat the 6812 bearing into the motor 1 bearing case. It should be a tight fit.",
+    "image": "./assets/build-images/002-base-bearing-motor.webp"
   },
   {
     "id": 4,
-    "phase": "Upper arm",
-    "title": "Attach link 2 and link 3",
-    "description": "Fit the upper-arm links onto the shoulder output, add dowels or sleeves where called out, and confirm the joint range is clear.",
-    "image": "./assets/build-images/004-upper-arm-links.webp"
+    "phase": "Link 2",
+    "title": "Press on the motor 2 housing",
+    "description": "Press the motor 2 housing into the bearing and align the three mounting holes with the prongs on motor 1.",
+    "image": "./assets/build-images/003-shoulder-motor-stack.webp"
   },
   {
     "id": 5,
-    "phase": "Elbow",
-    "title": "Install the elbow drive",
-    "description": "Insert the elbow motor, align the horn or output spline, and fasten the housing without pinching cables.",
-    "image": "./assets/build-images/005-elbow-drive.webp"
+    "phase": "Link 2",
+    "title": "Screw motor 2 housing to motor 1",
+    "description": "Fasten the motor 2 housing to the motor 1 shaft with at least three M3 x 8 mm socket screws.",
+    "image": "./assets/build-images/005-new-assembly-step.webp"
   },
   {
     "id": 6,
-    "phase": "Forearm",
-    "title": "Assemble the forearm link",
-    "description": "Join the forearm shells, add bearings and inserts, then check that the cable path remains serviceable.",
-    "image": "./assets/build-images/006-forearm-link.webp"
+    "phase": "Link 2",
+    "title": "Insert motor 2 into the housing",
+    "description": "Slide motor 2 (STS3095) into the motor 1 housing. Keep the connector facing the same direction shown in the render.",
+    "image": "./assets/build-images/004-upper-arm-links.webp"
   },
   {
     "id": 7,
-    "phase": "Wrist",
-    "title": "Build the 3 DOF wrist",
-    "description": "Install the wrist motors, align the wrist roll and pitch axes, and confirm there is no printed-part interference.",
-    "image": "./assets/build-images/007-wrist-assembly.webp"
+    "phase": "Link 2",
+    "title": "Screw housing to motor 2",
+    "description": "Install at least two of the STS3095 machine screws on each side of the housing.",
+    "image": "./assets/build-images/007-new-assembly-step.webp"
   },
   {
     "id": 8,
-    "phase": "Gripper",
-    "title": "Assemble the PincOpen gripper",
-    "description": "Fit the cam, rods, pins, sleeves, and fingertip parts. The gripper should open and close smoothly before mounting.",
-    "image": "./assets/build-images/008-pincopen-gripper.webp"
+    "phase": "Link 2",
+    "title": "Snap on the link 2 cap",
+    "description": "Snap the link 2 cap into place to enclose motor 2. Check the orientation before pressing it fully home.",
+    "image": "./assets/build-images/008-new-assembly-step.webp"
   },
   {
     "id": 9,
-    "phase": "Cameras",
-    "title": "Mount head and wrist cameras",
-    "description": "Install the standardized head and wrist cameras so datasets match the expected GEM physical setup.",
-    "image": "./assets/build-images/009-camera-mounts.webp"
+    "phase": "Link 3",
+    "title": "Slot link 3 onto motor 2",
+    "description": "Push link 3 onto the motor 2 gear horns. Follow the groove direction shown in the render and press evenly.",
+    "image": "./assets/build-images/009-new-assembly-step.webp"
   },
   {
     "id": 10,
-    "phase": "Electronics",
-    "title": "Wire power, bus board, USB, and emergency stop",
-    "description": "Connect the 24 V PSU, buck converters, serial bus board, USB hub, and emergency stop. Label each motor cable before closing the arm.",
-    "image": "./assets/build-images/010-electronics.webp"
+    "phase": "Link 3",
+    "title": "Screw link 3 to motor 2",
+    "description": "Insert the washers first, then fasten link 3 with M3 x 8 mm socket screws. Use thread locker on these screws.",
+    "image": "./assets/build-images/010-new-assembly-step.webp"
   },
   {
     "id": 11,
-    "phase": "Leader arm",
-    "title": "Build and test the leader arm",
-    "description": "Assemble the low-cost leader arm, confirm its joint directions, and verify follower motion before collecting data.",
-    "image": "./assets/build-images/011-leader-arm.webp"
+    "phase": "Link 3",
+    "title": "Insert motor 3 into link 3",
+    "description": "Remove the gear horn, then insert motor 3 (STS3250) into the cavity at the end of link 3. Reinstall the horn after the motor is seated.",
+    "image": "./assets/build-images/011-new-assembly-step.webp"
   },
   {
     "id": 12,
-    "phase": "Calibration",
-    "title": "Calibrate GEM in LeRobot",
-    "description": "Switch to the LeRobot gem branch, calibrate motors and cameras, then record a short dataset to validate the complete build.",
-    "image": "./assets/build-images/012-lerobot-calibration.webp"
+    "phase": "Link 3",
+    "title": "Screw motor 3 to link 3",
+    "description": "Fasten motor 3 to link 3 using two of the M2 screws supplied with the STS3250.",
+    "image": "./assets/build-images/012-new-assembly-step.webp"
+  },
+  {
+    "id": 13,
+    "phase": "Link 3",
+    "title": "Insert and fasten the motor 3 bearing",
+    "description": "Press the motor 3 bearing (6806-2RS) into the pocket, then retain it with two M2.5 screws and large-diameter washers.",
+    "image": "./assets/build-images/013-new-assembly-step.webp"
+  },
+  {
+    "id": 14,
+    "phase": "Link 3",
+    "title": "Snap on the link 3 cap",
+    "description": "Press the link 3 cap firmly into place. Add a small amount of glue if you want a stronger hold.",
+    "image": "./assets/build-images/014-new-assembly-step.webp"
+  },
+  {
+    "id": 15,
+    "phase": "Link 4",
+    "title": "Attach link 4 to link 3",
+    "description": "Press the connector on link 4 into the bearing in link 3, then rotate link 4 until it sits flush.",
+    "image": "./assets/build-images/015-new-assembly-step.webp"
+  },
+  {
+    "id": 16,
+    "phase": "Link 4",
+    "title": "Screw link 4 to motor 3",
+    "description": "Fasten link 4 to the motor 3 gear horn with four M3 x 10 mm socket screws and washers. Use thread locker.",
+    "image": "./assets/build-images/016-new-assembly-step.webp"
+  },
+  {
+    "id": 17,
+    "phase": "Link 4",
+    "title": "Insert motor 4 into link 4",
+    "description": "Insert motor 4 (STS3095) into link 4 with the connector oriented as shown.",
+    "image": "./assets/build-images/017-new-assembly-step.webp"
+  },
+  {
+    "id": 18,
+    "phase": "Link 4",
+    "title": "Screw link 4 housing to motor 4",
+    "description": "Install at least two of the STS3095 machine screws on each side to lock motor 4 into the housing.",
+    "image": "./assets/build-images/018-new-assembly-step.webp"
+  },
+  {
+    "id": 19,
+    "phase": "Link 4",
+    "title": "Snap on the link 4 cap",
+    "description": "Snap the link 4 cap into place. Add a small amount of glue if the cap needs extra retention.",
+    "image": "./assets/build-images/019-new-assembly-step.webp"
+  },
+  {
+    "id": 20,
+    "phase": "Link 5",
+    "title": "Slot link 5 onto motor 4",
+    "description": "Slot link 5 onto the motor 4 gear horn, following the groove direction shown in the render.",
+    "image": "./assets/build-images/020-new-assembly-step.webp"
+  },
+  {
+    "id": 21,
+    "phase": "Link 5",
+    "title": "Screw link 5 to motor 4",
+    "description": "Insert the washers first, then fasten link 5 to motor 4 with up to eight M3 x 8 mm socket screws.",
+    "image": "./assets/build-images/021-new-assembly-step.webp"
+  },
+  {
+    "id": 22,
+    "phase": "Link 5",
+    "title": "Insert motor 5 into link 5",
+    "description": "Slide motor 5 (STS3215) into the link 5 cavity until it reaches the end stop.",
+    "image": "./assets/build-images/022-insert-motor5.webp"
+  },
+  {
+    "id": 23,
+    "phase": "Link 5",
+    "title": "Screw motor 5 to link 5",
+    "description": "Use two of the STS3215 self-tapping screws to fasten motor 5 to link 5.",
+    "image": "./assets/build-images/022-new-assembly-step.webp"
+  },
+  {
+    "id": 24,
+    "phase": "Link 5",
+    "title": "Insert and fasten the motor 5 bearing",
+    "description": "Press the 6806-2RS bearing into link 5 and retain it with the M2.5 tapping screws and washers.",
+    "image": "./assets/build-images/024-new-assembly-step.webp"
+  },
+  {
+    "id": 25,
+    "phase": "Link 5",
+    "title": "Snap on the link 5 cap",
+    "description": "Snap the link 5 cap into place. Use a small amount of glue if the cap needs extra retention.",
+    "image": "./assets/build-images/025-link5-cap.webp"
+  },
+  {
+    "id": 26,
+    "phase": "Link 6",
+    "title": "Attach link 6 to link 5",
+    "description": "Push the link 6 connector into the bearing in link 5, then rotate link 6 until it aligns with link 5.",
+    "image": "./assets/build-images/025-new-assembly-step.webp"
+  },
+  {
+    "id": 27,
+    "phase": "Link 6",
+    "title": "Screw link 6 to motor 5",
+    "description": "Fasten link 6 to motor 5 with four M3 x 10 mm socket screws and washers. Use thread locker.",
+    "image": "./assets/build-images/026-new-assembly-step.webp"
+  },
+  {
+    "id": 28,
+    "phase": "Link 6",
+    "title": "Insert motor 6 into link 6",
+    "description": "Insert motor 6 (STS3215) into the link 6 housing with the connector oriented as shown.",
+    "image": "./assets/build-images/028-new-assembly-step.webp"
+  },
+  {
+    "id": 29,
+    "phase": "Link 6",
+    "title": "Screw motor 6 to the link 6 housing",
+    "description": "Fasten motor 6 to the link 6 housing using the M2 self-tapping screws supplied with the STS3215.",
+    "image": "./assets/build-images/029-new-assembly-step.webp"
+  },
+  {
+    "id": 30,
+    "phase": "Link 7",
+    "title": "Attach link 7 to motor 6",
+    "description": "Slot link 7 onto the motor 6 gear horn, following the groove direction.",
+    "image": "./assets/build-images/030-new-assembly-step.webp"
+  },
+  {
+    "id": 31,
+    "phase": "Link 7",
+    "title": "Screw link 7 to motor 6",
+    "description": "Insert the washers first, then fasten link 7 to motor 6 with up to eight M3 x 8 mm socket screws.",
+    "image": "./assets/build-images/031-new-assembly-step.webp"
+  },
+  {
+    "id": 32,
+    "phase": "Link 7",
+    "title": "Insert motor 7 into link 7 housing",
+    "description": "Press motor 7 (STS3215) into the link 7 housing. The fit is intentionally tight, so keep the motor square as it goes in.",
+    "image": "./assets/build-images/032-new-assembly-step.webp"
+  },
+  {
+    "id": 33,
+    "phase": "Link 8",
+    "title": "Attach link 8 to motor 7",
+    "description": "Press link 8 onto the horn of motor 7, following the groove direction.",
+    "image": "./assets/build-images/033-new-assembly-step.webp"
+  },
+  {
+    "id": 34,
+    "phase": "Link 8",
+    "title": "Screw link 8 to motor 7",
+    "description": "Insert the washers first, then fasten link 8 to motor 7 with up to eight M4 x 8 mm socket screws.",
+    "image": "./assets/build-images/034-new-assembly-step.webp"
+  },
+  {
+    "id": 35,
+    "phase": "Gripper",
+    "title": "Assemble the PincOpen gripper",
+    "description": "Build the PincOpen gripper using the dedicated Pollen Robotics instructions, then bring the completed gripper back to the GEM assembly.",
+    "image": "./assets/build-images/008-pincopen-gripper.webp"
+  },
+  {
+    "id": 36,
+    "phase": "Gripper",
+    "title": "Fasten the gripper to link 8",
+    "description": "Fasten the PincOpen gripper to link 8 with four M2.5 x 10 mm tapping screws. This completes the arm structure.",
+    "image": "./assets/build-images/036-new-assembly-step.webp"
+  },
+  {
+    "id": 37,
+    "phase": "Gripper",
+    "title": "Attach the wrist camera",
+    "description": "Mount the wrist camera and fasten it with the M2 tapping screws supplied with the STS3215.",
+    "image": "./assets/build-images/037-wrist-camera.webp"
+  },
+  {
+    "id": 38,
+    "phase": "Finished Arm",
+    "title": "Check the completed arm",
+    "description": "Review the full assembly before wiring. Check caps, screws, bearings, cable clearance, and gripper alignment.",
+    "image": "./assets/build-images/037-new-assembly-step.webp"
+  },
+  {
+    "id": 39,
+    "phase": "Cameras",
+    "title": "Mount head and wrist cameras",
+    "description": "Install the standardized head and wrist cameras so datasets match the expected GEM physical setup.",
+    "image": "./assets/build-images/037-wrist-camera.webp"
+  },
+  {
+    "id": 40,
+    "phase": "Electronics",
+    "title": "Wire power, bus board, USB, and emergency stop",
+    "description": "Connect the 24 V PSU, buck converters, serial bus board, USB hub, and emergency stop. Label each motor cable before closing the arm.",
+    "image": "./assets/media/screwdriver.webp"
   }
 ]
