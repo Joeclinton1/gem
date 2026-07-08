@@ -16,21 +16,6 @@ const addIcons = () => {
   window.lucide?.createIcons();
 };
 
-const fitBuildStepScroller = container => {
-  const cards = [...container.querySelectorAll('.build-step')];
-  if (!cards.length) return;
-
-  const rowTops = [...new Set(cards.map(card => Math.round(card.offsetTop)))].sort((a, b) => a - b);
-  const visibleRows = rowTops.slice(0, 2);
-  if (!visibleRows.length) return;
-
-  const visibleCards = cards.filter(card => visibleRows.includes(Math.round(card.offsetTop)));
-  const bottom = Math.max(...visibleCards.map(card => card.offsetTop + card.offsetHeight));
-  const styles = getComputedStyle(container);
-  const bottomPadding = Number.parseFloat(styles.paddingBottom) || 0;
-  container.style.setProperty('--build-steps-height', `${Math.ceil(bottom + bottomPadding)}px`);
-};
-
 const renderBuildSteps = async () => {
   const container = document.querySelector('#build-steps');
   if (!container) return;
@@ -67,8 +52,6 @@ const renderBuildSteps = async () => {
     article.append(media, body);
     container.append(article);
   });
-  fitBuildStepScroller(container);
-  window.addEventListener('resize', () => fitBuildStepScroller(container));
 };
 
 const renderBom = async () => {
