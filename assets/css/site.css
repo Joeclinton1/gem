@@ -408,6 +408,39 @@ code {
 
 .build-steps {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-height: min(980px, 76vh);
+  padding: 28px 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 34px,
+    #000 calc(100% - 34px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 34px,
+    #000 calc(100% - 34px),
+    transparent 100%
+  );
+}
+
+.build-steps::-webkit-scrollbar {
+  width: 10px;
+}
+
+.build-steps::-webkit-scrollbar-track {
+  background: #e5dfd3;
+}
+
+.build-steps::-webkit-scrollbar-thumb {
+  border: 2px solid #e5dfd3;
+  border-radius: 999px;
+  background: #aaa092;
 }
 
 .build-step-media {
