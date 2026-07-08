@@ -66,7 +66,7 @@ const renderBom = async () => {
     ['Grand total', money(bom.totals.grand)],
     ['Units counted', bom.totals.units],
     ['Categories', bom.categories.length],
-    ['Source', 'GEM BOM.xlsx'],
+    ['Estimate', 'Core arm parts'],
   ].forEach(([label, value]) => {
     const item = document.createElement('div');
     const span = document.createElement('span');

@@ -79,10 +79,10 @@
           <p class="eyebrow">Motor layout</p>
           <h2 id="motor-title">Payload where it counts.</h2>
           <p>
-            GEM puts a Steadywin QDD at the shoulder and uses low-cost Feetech servos
-            through the rest of the arm. The result is unusual payload for the price:
-            torque is concentrated near the base, while lighter joints keep the moving
-            mass and bill of materials low. That is what gives GEM its payload-to-cost ratio.
+            A high-torque QDD shoulder carries the heavy lifting, while lower-cost
+            Feetech servos handle the elbow, wrist, and gripper. Concentrating torque near
+            the base keeps the moving mass low and makes the rest of the arm much cheaper
+            without giving up useful payload.
           </p>
         </div>
         <div class="motor-layout">
@@ -114,8 +114,9 @@
           <p class="eyebrow">Live model</p>
           <h2 id="viewer-title">Live 3D arm</h2>
           <p>
-            Drag to orbit. The model is loaded from the same URDF and mesh bundle used for
-            the project files.
+            Inspect the printed structure, joint layout, and camera mounts before you build.
+            The model reflects the released geometry, including the mounting positions you
+            will assemble around.
           </p>
         </div>
         <div class="viewer-layout">
@@ -171,8 +172,9 @@
           <p class="eyebrow">Control stack</p>
           <h2 id="control-title">Runs on LeRobot.</h2>
           <p>
-            Control code lives in
-            <a href="https://github.com/Joeclinton1/lerobot/tree/gem">Joeclinton1/lerobot on the <code>gem</code> branch</a>.
+            Use the GEM branch of
+            <a href="https://github.com/Joeclinton1/lerobot/tree/gem">Joeclinton1/lerobot</a>
+            for motor calibration, teleoperation, camera capture, and policy training.
           </p>
         </div>
         <div class="control-grid">
@@ -205,8 +207,8 @@ pip install -e .</code></pre>
           <p class="eyebrow">Build manual</p>
           <h2 id="build-title">Build it step by step.</h2>
           <p>
-            The manual is data-driven so each step can be paired with a rendered photo from
-            the assembly tool as the build sequence is finalized.
+            Follow the arm from printed parts to a wired robot. Each step pairs the action
+            with a render so part orientation and insertion direction are easy to check.
           </p>
         </div>
         <div id="build-steps" class="build-steps" aria-live="polite"></div>
@@ -215,7 +217,11 @@ pip install -e .</code></pre>
       <section id="bom" class="section bom-section" aria-labelledby="bom-title">
         <div class="section-heading">
           <p class="eyebrow">Bill of materials</p>
-          <h2 id="bom-title">Bill of materials.</h2>
+          <h2 id="bom-title">Parts and cost.</h2>
+          <p>
+            The core arm is designed around widely available motors, bearings, fasteners,
+            wiring, and printed structure so the build stays practical to source.
+          </p>
         </div>
         <div class="bom-summary" id="bom-summary"></div>
         <div class="table-wrap">
