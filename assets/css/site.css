@@ -378,6 +378,7 @@ urdf-viewer {
 
 .task-grid,
 .control-grid,
+.download-grid,
 .build-steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -386,6 +387,7 @@ urdf-viewer {
 
 .task-grid article,
 .control-grid article,
+.download-grid article,
 .build-step {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -459,6 +461,45 @@ urdf-viewer {
 
 .control-grid h3 {
   color: #fff;
+}
+
+.download-section {
+  background: #e7e8e0;
+}
+
+.download-grid article {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 20px;
+}
+
+.download-grid span {
+  width: fit-content;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #5d642f;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.download-grid p {
+  min-height: 58px;
+  margin: 0;
+  color: #4b514d;
+  line-height: 1.55;
+}
+
+.download-grid a {
+  align-self: end;
+}
+
+.download-note {
+  max-width: 780px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 pre {
@@ -642,6 +683,7 @@ footer a {
   .motor-layout,
   .task-grid,
   .control-grid,
+  .download-grid,
   .build-steps,
   .bom-summary {
     grid-template-columns: 1fr;
