@@ -180,12 +180,10 @@ button {
   z-index: 3;
   right: clamp(18px, 5vw, 72px);
   bottom: 28px;
-  left: clamp(18px, 5vw, 72px);
+  width: min(70vw, 980px);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  max-width: 980px;
-  margin-left: auto;
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(12px);
@@ -725,6 +723,7 @@ footer a {
   }
 
   .hero-stats {
+    width: auto;
     right: 18px;
     bottom: 18px;
     left: 18px;
