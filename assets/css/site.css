@@ -408,7 +408,7 @@ code {
 
 .build-steps {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-height: min(980px, 76vh);
+  max-height: var(--build-steps-height, min(860px, 76vh));
   padding: 28px 8px;
   overflow-y: auto;
   overscroll-behavior: contain;
