@@ -2,12 +2,12 @@
   "sourceWorkbook": "GEM BOM.xlsx",
   "categories": [
     { "name": "Motors", "total": 366.53 },
-    { "name": "Miscellaneous", "total": 47.51 },
+    { "name": "Miscellaneous", "total": 80.19 },
     { "name": "PincOpen", "total": 2.84 }
   ],
   "totals": {
-    "units": 57,
-    "grand": 441.11
+    "units": 59,
+    "grand": 473.79
   },
   "items": [
     {
@@ -145,6 +145,22 @@
       "unitPrice": 2.65,
       "quantity": 2,
       "total": 5.3
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Wrist camera U20CAM-720P",
+      "link": "https://www.inno-maker.com/product/u20cam-720p/",
+      "unitPrice": 13.99,
+      "quantity": 1,
+      "total": 13.99
+    },
+    {
+      "category": "Miscellaneous",
+      "name": "Head camera U20CAM-1080P",
+      "link": "https://www.inno-maker.com/product/u20cam-1080p/",
+      "unitPrice": 18.69,
+      "quantity": 1,
+      "total": 18.69
     },
     {
       "category": "Miscellaneous",
