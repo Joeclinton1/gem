@@ -3,7 +3,7 @@
     "id": 1,
     "phase": "3D printing",
     "title": "Print all parts",
-    "description": "3D print all the plastic parts. Using the 'all parts' STL file is recommended. Infill is 15%, support on built plate only.",
+    "description": "3D print all the plastic parts. Using the 'all parts' STL file is recommended. Infill is 22%, support on built plate only.",
     "image": "./assets/build-images/gem 3d printed.png"
   },
   {
