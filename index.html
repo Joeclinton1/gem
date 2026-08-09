@@ -214,7 +214,6 @@ pip install -e .</code></pre>
           <p>
             Start with the all-parts 3MF if you want the quickest print setup. The STL packs
             split the arm, mount, and leader so you can reprint only the pieces you need.
-            Source STEP files are included for inspection and modification.
           </p>
         </div>
         <div class="download-grid">
@@ -241,12 +240,6 @@ pip install -e .</code></pre>
             <h3>Leader STLs</h3>
             <p>Leader arm parts and matching leader mount files.</p>
             <a href="https://github.com/Joeclinton1/gem/releases/latest/download/gem-leader-stls.zip" role="button" data-icon="download">Download</a>
-          </article>
-          <article>
-            <span>STEP</span>
-            <h3>Source CAD</h3>
-            <p>Public assembly STEP files with the GEM and PincOpen license notices.</p>
-            <a href="https://github.com/Joeclinton1/gem/releases/latest/download/gem-assembly-step.zip" role="button" data-icon="download">Download</a>
           </article>
         </div>
         <p class="download-note">
@@ -275,6 +268,15 @@ pip install -e .</code></pre>
             wiring, and printed structure so the build stays practical to source.
           </p>
         </div>
+        <div class="bom-toolbar">
+          <div class="bom-source-toggle" role="group" aria-label="BOM source links">
+            <button type="button" data-bom-source="current" aria-pressed="true">Current suppliers</button>
+            <button type="button" data-bom-source="amazon" aria-pressed="false">Amazon alternatives</button>
+          </div>
+          <p id="bom-source-note">
+            Prices are the original BOM estimates. Switching source changes eligible links only.
+          </p>
+        </div>
         <div class="bom-summary" id="bom-summary"></div>
         <div class="table-wrap">
           <table id="bom-table">
@@ -291,6 +293,22 @@ pip install -e .</code></pre>
             <tbody></tbody>
           </table>
         </div>
+        <aside class="motor-ordering" aria-labelledby="motor-ordering-title">
+          <p class="eyebrow">Motor ordering tip</p>
+          <h3 id="motor-ordering-title">Ask Feetech for a direct motor quote.</h3>
+          <p>
+            For the leader arm, buy the <strong>Feetech STS3215-C046 Servo — 7.4V,
+            14.4kg, 1/147</strong>. You can
+            <a href="https://shop.wowrobo.com/products/feetech-sts3215-c046-servo-7-4v-14-4kg-1-147-servo-for-so-arm101" target="_blank" rel="noreferrer">order it from WowRobo</a>
+            if you need a ready-to-use link.
+          </p>
+          <p>
+            For the best price on all Feetech motors, contact Feetech customer support and ask
+            for a direct order. Screenshot the <strong>Motors</strong> section of this BOM and
+            include it with your message; a direct quote will be cheaper than buying through
+            the Alibaba links individually.
+          </p>
+        </aside>
       </section>
 
     </main>

@@ -20,7 +20,7 @@
     },
     {
       "category": "Motors",
-      "name": "Feetech sts3095-C001",
+      "name": "Feetech STS3095-C001 (8.4V, 105kg)",
       "link": "https://www.alibaba.com/product-detail/STS3095-8-4V-105KG-Full-Metal_1601634759637.html?spm=a2700.prosearch.normal_offer.d_title.713a67af419FjU&priceId=d07ab5c885a9428daae260874bee7760",
       "unitPrice": 49,
       "quantity": 2,
@@ -36,8 +36,8 @@
     },
     {
       "category": "Motors",
-      "name": "Feetech sts3215-C018",
-      "link": "https://www.alibaba.com/product-detail/SO-ARM101-Low-Cost-AI-Arm_1601381245887.html?spm=a2700.prosearch.normal_offer.d_title.36d367afZ7etmD&selectedCarrierCode=SEMI_MANAGED_ECONOMIC%40%40ECONOMY&priceId=10735e6871f240d5bd5a3c4443a824e0",
+      "name": "Feetech STS3215-C018 (12V, 30kg)",
+      "link": "https://www.alibaba.com/product-detail/subject_1601756217756.html?from=share&ckvia=share_6383b685b2894945afc195133f69a176",
       "unitPrice": 13.9,
       "quantity": 4,
       "total": 55.6
@@ -62,6 +62,7 @@
       "category": "Miscellaneous",
       "name": "Buck converter 5A",
       "link": "https://www.aliexpress.com/item/1005002313624926.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=5A+DC-DC+adjustable+buck+converter",
       "unitPrice": 2.25,
       "quantity": 2,
       "total": 4.5
@@ -70,6 +71,7 @@
       "category": "Miscellaneous",
       "name": "24V 10A 240W PSU",
       "link": "https://www.aliexpress.com/item/1005001499518150.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=24V+10A+240W+switching+power+supply",
       "unitPrice": 16.78,
       "quantity": 1,
       "total": 16.78
@@ -86,6 +88,7 @@
       "category": "Miscellaneous",
       "name": "Emergency stop button",
       "link": "https://www.aliexpress.com/item/1005005089716170.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=22mm+emergency+stop+button",
       "unitPrice": 6.58,
       "quantity": 1,
       "total": 6.58
@@ -94,6 +97,7 @@
       "category": "Miscellaneous",
       "name": "Power cable",
       "link": "https://www.aliexpress.com/item/1005001299125752.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=UK+IEC+C13+mains+power+cable",
       "unitPrice": 1.4,
       "quantity": 1,
       "total": 1.4
@@ -102,6 +106,7 @@
       "category": "Miscellaneous",
       "name": "1m 20awg red/black wire",
       "link": "https://www.aliexpress.com/item/1005007251965003.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=20AWG+red+black+silicone+wire",
       "unitPrice": 0.63,
       "quantity": 1,
       "total": 0.63
@@ -110,6 +115,7 @@
       "category": "Miscellaneous",
       "name": "JOYELEC 1-in 3-out lever connector",
       "link": "https://www.amazon.co.uk/JOYELEC-Electrical-Connectors-Conductor-Connector/dp/B0FJ1DR56T",
+      "amazonLink": "https://www.amazon.co.uk/JOYELEC-Electrical-Connectors-Conductor-Connector/dp/B0FJ1DR56T",
       "unitPrice": 0.49,
       "quantity": 2,
       "total": 0.98
@@ -118,6 +124,7 @@
       "category": "Miscellaneous",
       "name": "WAGO 222-412 2-conductor lever connector",
       "link": "https://cpc.farnell.com/wago/222-412/terminal-block-w-lever-2cond-4mm%C2%B2/dp/CN12061",
+      "amazonLink": "https://www.amazon.co.uk/s?k=WAGO+222-412",
       "unitPrice": 0.43,
       "quantity": 2,
       "total": 0.86
@@ -126,6 +133,7 @@
       "category": "Miscellaneous",
       "name": "Bearing 6812-2RS",
       "link": "https://www.aliexpress.com/item/4000887923434.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=6812-2RS+bearing",
       "unitPrice": 5.2,
       "quantity": 1,
       "total": 5.2
@@ -134,6 +142,7 @@
       "category": "Miscellaneous",
       "name": "Bearing 6806-2RS",
       "link": "https://www.aliexpress.com/item/1005007420073930.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=6806-2RS+bearing",
       "unitPrice": 1.39,
       "quantity": 2,
       "total": 2.78
@@ -142,6 +151,7 @@
       "category": "Miscellaneous",
       "name": "30x30 aluminum tube",
       "link": "www.aluminium-online.co.uk",
+      "amazonLink": "https://www.amazon.co.uk/s?k=30x30mm+aluminium+square+tube",
       "unitPrice": 6.12,
       "quantity": 1,
       "total": 6.12
@@ -150,6 +160,7 @@
       "category": "Miscellaneous",
       "name": "USB expansion board",
       "link": "https://thepihut.com/products/mini-4-port-usb-c-usb-2-0-hub",
+      "amazonLink": "https://www.amazon.co.uk/s?k=mini+4+port+USB-C+USB+2.0+hub",
       "unitPrice": 9.93,
       "quantity": 1,
       "total": 9.93
@@ -158,6 +169,7 @@
       "category": "Miscellaneous",
       "name": "USB cable 15cm",
       "link": "https://www.aliexpress.com/item/1005010458120718.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=15cm+USB+cable",
       "unitPrice": 2.65,
       "quantity": 2,
       "total": 5.3
@@ -182,6 +194,7 @@
       "category": "Miscellaneous",
       "name": "M3x8 Socket cap screw",
       "link": "https://www.aliexpress.com/item/1005007137661687.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M3x8+socket+cap+screws",
       "unitPrice": 0.05,
       "quantity": 32,
       "total": 1.6
@@ -190,6 +203,7 @@
       "category": "Miscellaneous",
       "name": "M3x10 Socket cap screw",
       "link": "https://fr.aliexpress.com/item/1005006869763828.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M3x10+socket+cap+screws",
       "unitPrice": 0.04,
       "quantity": 32,
       "total": 1.28
@@ -198,6 +212,7 @@
       "category": "PincOpen",
       "name": "M3x16 steel dowel",
       "link": "https://www.aliexpress.com/item/33011975019.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M3x16mm+steel+dowel+pins",
       "unitPrice": 0.11,
       "quantity": 4,
       "total": 0.44
@@ -206,6 +221,7 @@
       "category": "PincOpen",
       "name": "M3x24 steel dowel",
       "link": "https://fr.aliexpress.com/item/33011975019.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M3x24mm+steel+dowel+pins",
       "unitPrice": 0.2,
       "quantity": 4,
       "total": 0.8
@@ -214,6 +230,7 @@
       "category": "PincOpen",
       "name": "3x6x5 brass sleeve bearing",
       "link": "https://fr.aliexpress.com/item/1005005270665270.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=3x6x5mm+brass+sleeve+bearing",
       "unitPrice": 0.27,
       "quantity": 4,
       "total": 1.08
@@ -222,6 +239,7 @@
       "category": "PincOpen",
       "name": "M3x10 Socket cap screw",
       "link": "https://fr.aliexpress.com/item/1005006869763828.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M3x10+socket+cap+screws",
       "unitPrice": 0.04,
       "quantity": 4,
       "total": 0.16
@@ -230,6 +248,7 @@
       "category": "PincOpen",
       "name": "M3x5x4.2 Brass insert",
       "link": "https://fr.aliexpress.com/item/1005003582355741.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M3x5x4.2+brass+heat+set+inserts",
       "unitPrice": 0.04,
       "quantity": 4,
       "total": 0.16
@@ -238,6 +257,7 @@
       "category": "PincOpen",
       "name": "M2.5x8 sunken screw",
       "link": "https://fr.aliexpress.com/item/1005006883251273.html",
+      "amazonLink": "https://www.amazon.co.uk/s?k=M2.5x8+countersunk+screws",
       "unitPrice": 0.01,
       "quantity": 20,
       "total": 0.2

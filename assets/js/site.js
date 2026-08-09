@@ -57,9 +57,12 @@ const renderBuildSteps = async () => {
 const renderBom = async () => {
   const tableBody = document.querySelector('#bom-table tbody');
   const summary = document.querySelector('#bom-summary');
-  if (!tableBody || !summary) return;
+  const sourceButtons = document.querySelectorAll('[data-bom-source]');
+  const sourceNote = document.querySelector('#bom-source-note');
+  if (!tableBody || !summary || !sourceButtons.length) return;
   const response = await fetch('./assets/data/bom.json');
   const bom = await response.json();
+  let sourceMode = 'current';
 
   summary.innerHTML = '';
   [
@@ -77,34 +80,59 @@ const renderBom = async () => {
     summary.append(item);
   });
 
-  tableBody.textContent = '';
-  bom.items.forEach(item => {
-    const row = document.createElement('tr');
-    const source = item.link
-      ? Object.assign(document.createElement('a'), {
-        href: item.link.startsWith('http') ? item.link : `https://${item.link}`,
-        textContent: 'Open',
-        target: '_blank',
-        rel: 'noreferrer',
-      })
-      : document.createElement('span');
-    if (!item.link) source.textContent = 'TBC';
+  const drawItems = () => {
+    tableBody.textContent = '';
+    bom.items.forEach(item => {
+      const row = document.createElement('tr');
+      const useAmazon = sourceMode === 'amazon' && item.category !== 'Motors' && item.amazonLink;
+      const selectedLink = useAmazon ? item.amazonLink : item.link;
+      const source = selectedLink
+        ? Object.assign(document.createElement('a'), {
+          href: selectedLink.startsWith('http') ? selectedLink : `https://${selectedLink}`,
+          textContent: useAmazon ? 'Amazon' : 'Open',
+          target: '_blank',
+          rel: 'noreferrer',
+        })
+        : document.createElement('span');
+      if (!selectedLink) source.textContent = 'TBC';
 
-    [
-      item.name,
-      item.category,
-      money(item.unitPrice),
-      String(item.quantity),
-      money(item.total),
-      source,
-    ].forEach(value => {
-      const td = document.createElement('td');
-      if (value instanceof Node) td.append(value);
-      else td.textContent = value;
-      row.append(td);
+      if (sourceMode === 'amazon' && !useAmazon && selectedLink) {
+        source.textContent = item.category === 'Motors' ? 'Specialist' : 'Current only';
+      }
+
+      [
+        item.name,
+        item.category,
+        money(item.unitPrice),
+        String(item.quantity),
+        money(item.total),
+        source,
+      ].forEach(value => {
+        const td = document.createElement('td');
+        if (value instanceof Node) td.append(value);
+        else td.textContent = value;
+        row.append(td);
+      });
+      tableBody.append(row);
     });
-    tableBody.append(row);
+  };
+
+  sourceButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      sourceMode = button.dataset.bomSource;
+      sourceButtons.forEach(candidate => {
+        candidate.setAttribute('aria-pressed', String(candidate === button));
+      });
+      if (sourceNote) {
+        sourceNote.textContent = sourceMode === 'amazon'
+          ? 'Amazon UK links are shown where available. Motors and specialist electronics keep their current sources; prices remain the original estimates.'
+          : 'Prices are the original BOM estimates. Switching source changes eligible links only.';
+      }
+      drawItems();
+    });
   });
+
+  drawItems();
 };
 
 addIcons();
