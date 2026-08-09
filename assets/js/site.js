@@ -1,5 +1,6 @@
+const moneyLocales = { GBP: 'en-GB', EUR: 'fr-FR', USD: 'en-US' };
 const money = (value, currency = 'USD') => Number(value || 0).toLocaleString(
-  currency === 'GBP' ? 'en-GB' : 'en-US', {
+  moneyLocales[currency] || 'en-US', {
     style: 'currency',
     currency,
     maximumFractionDigits: 2,
@@ -66,22 +67,23 @@ const renderBom = async () => {
   const bom = await response.json();
   let sourceMode = 'current';
 
-  const amazon = bom.amazonAlternative;
-  const checkedAt = new Date(`${amazon.checkedAt}T00:00:00Z`).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-    timeZone: 'UTC',
-  });
+  const amazonModes = {
+    amazonUk: { ...bom.amazonAlternatives.uk, fieldPrefix: 'amazon' },
+    amazonEu: { ...bom.amazonAlternatives.eu, fieldPrefix: 'amazonEu' },
+    amazonUs: { ...bom.amazonAlternatives.us, fieldPrefix: 'amazonUs' },
+  };
+  const selectedMarket = () => amazonModes[sourceMode] || null;
+  const marketField = (item, market, field) => item[`${market.fieldPrefix}${field}`];
 
   const drawSummary = () => {
     summary.textContent = '';
-    const values = sourceMode === 'amazon'
+    const market = selectedMarket();
+    const values = market
       ? [
-        ['Grand total', money(amazon.totals.grand, amazon.currency)],
-        ['Amazon basket', money(amazon.totals.amazonBasket, amazon.currency)],
-        ['Specialist motors', money(amazon.totals.currentSuppliers, amazon.currency)],
-        ['Vs current BOM (converted)', `+${money(amazon.totals.difference, amazon.currency)} (${amazon.totals.differencePercent}%)`],
+        ['Grand total', money(market.totals.grand, market.currency)],
+        ['Amazon basket', money(market.totals.amazonBasket, market.currency)],
+        ['Specialist motors', money(market.totals.currentSuppliers, market.currency)],
+        ['Vs current BOM (converted)', `+${money(market.totals.difference, market.currency)} (${market.totals.differencePercent}%)`],
       ]
       : [
         ['Grand total', money(bom.totals.grand)],
@@ -115,47 +117,60 @@ const renderBom = async () => {
   const drawItems = () => {
     tableBody.textContent = '';
     bom.items.forEach(item => {
+      const market = selectedMarket();
       const row = document.createElement('tr');
-      const useAmazon = sourceMode === 'amazon' && item.category !== 'Motors' && item.amazonLink;
-      const selectedLink = useAmazon ? item.amazonLink : item.link;
+      const amazonLink = market ? marketField(item, market, 'Link') : '';
+      const useAmazon = Boolean(market && item.category !== 'Motors' && amazonLink);
+      const selectedLink = useAmazon ? amazonLink : item.link;
       const source = document.createElement('span');
       if (selectedLink) {
         const link = Object.assign(document.createElement('a'), {
           href: selectedLink.startsWith('http') ? selectedLink : `https://${selectedLink}`,
-          textContent: useAmazon ? 'Amazon' : 'Open',
+          textContent: 'Open',
           target: '_blank',
           rel: 'noreferrer',
         });
-        if (sourceMode === 'amazon' && !useAmazon) link.textContent = 'Specialist';
+        if (useAmazon) {
+          const hostname = new URL(link.href).hostname;
+          link.textContent = hostname.endsWith('.fr')
+            ? 'Amazon FR'
+            : hostname.endsWith('.de')
+              ? 'Amazon DE'
+              : hostname.endsWith('.com')
+                ? 'Amazon US'
+                : 'Amazon UK';
+        } else if (market) {
+          link.textContent = 'Specialist';
+        }
         source.append(link);
       } else {
-        source.textContent = sourceMode === 'amazon' && item.category === 'Motors'
+        source.textContent = market && item.category === 'Motors'
           ? 'Specialist quote'
           : 'TBC';
       }
-      if (useAmazon && item.amazonPrime) {
+      if (useAmazon) {
         const small = document.createElement('small');
-        small.textContent = 'Prime eligible when checked';
+        small.textContent = market.availabilityLabel;
         source.append(small);
       }
 
       let unitPrice = money(item.unitPrice);
       let totalPrice = money(item.total);
-      if (sourceMode === 'amazon' && item.category === 'Motors') {
+      if (market && item.category === 'Motors') {
         unitPrice = valueWithNote(
-          money(item.unitPrice / amazon.fx.gbpToUsd, amazon.currency),
+          money(item.unitPrice / market.fx.usdPerUnit, market.currency),
           'converted from USD',
         );
-        totalPrice = money(item.total / amazon.fx.gbpToUsd, amazon.currency);
-      } else if (useAmazon && item.amazonIncluded) {
-        unitPrice = valueWithNote('Included', item.amazonIncluded);
-        totalPrice = '£0.00';
+        totalPrice = money(item.total / market.fx.usdPerUnit, market.currency);
+      } else if (useAmazon && marketField(item, market, 'Included')) {
+        unitPrice = valueWithNote('Included', marketField(item, market, 'Included'));
+        totalPrice = money(0, market.currency);
       } else if (useAmazon) {
         unitPrice = valueWithNote(
-          money(item.amazonPrice, amazon.currency),
-          item.amazonPack,
+          money(marketField(item, market, 'Price'), market.currency),
+          marketField(item, market, 'Pack'),
         );
-        totalPrice = money(item.amazonTotal, amazon.currency);
+        totalPrice = money(marketField(item, market, 'Total'), market.currency);
       }
 
       [
@@ -181,12 +196,18 @@ const renderBom = async () => {
       sourceButtons.forEach(candidate => {
         candidate.setAttribute('aria-pressed', String(candidate === button));
       });
+      const market = selectedMarket();
       if (sourceNote) {
-        sourceNote.textContent = sourceMode === 'amazon'
-          ? `Amazon UK prices and Prime filter checked ${checkedAt}. Motors keep their specialist sources and are converted at £1 = $${amazon.fx.gbpToUsd} (${amazon.fx.source}, ${amazon.fx.asOf}). Recheck price and Prime at checkout.`
-          : 'Original BOM estimates in USD. Quantities are the number required for one arm.';
+        if (market) {
+          const motorPricing = market.currency === 'USD'
+            ? 'Motors keep their specialist USD prices.'
+            : `Motors keep their specialist sources and are converted at 1 ${market.currency} = $${market.fx.usdPerUnit} (${market.fx.source}, ${market.fx.asOf}).`;
+          sourceNote.textContent = `${market.note} ${motorPricing}`;
+        } else {
+          sourceNote.textContent = 'Original BOM estimates in USD. Quantities are the number required for one arm.';
+        }
       }
-      if (priceHeading) priceHeading.textContent = sourceMode === 'amazon' ? 'Pack / listing' : 'Unit';
+      if (priceHeading) priceHeading.textContent = market ? 'Pack / listing' : 'Unit';
       drawSummary();
       drawItems();
     });
