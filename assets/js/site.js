@@ -1,8 +1,9 @@
-const money = value => Number(value || 0).toLocaleString('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  maximumFractionDigits: 2,
-});
+const money = (value, currency = 'USD') => Number(value || 0).toLocaleString(
+  currency === 'GBP' ? 'en-GB' : 'en-US', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 2,
+  });
 
 const text = value => document.createTextNode(value ?? '');
 
@@ -59,26 +60,57 @@ const renderBom = async () => {
   const summary = document.querySelector('#bom-summary');
   const sourceButtons = document.querySelectorAll('[data-bom-source]');
   const sourceNote = document.querySelector('#bom-source-note');
+  const priceHeading = document.querySelector('[data-bom-price-heading]');
   if (!tableBody || !summary || !sourceButtons.length) return;
   const response = await fetch('./assets/data/bom.json');
   const bom = await response.json();
   let sourceMode = 'current';
 
-  summary.innerHTML = '';
-  [
-    ['Grand total', money(bom.totals.grand)],
-    ['Units counted', bom.totals.units],
-    ['Categories', bom.categories.length],
-    ['Estimate', 'Core arm parts'],
-  ].forEach(([label, value]) => {
-    const item = document.createElement('div');
-    const span = document.createElement('span');
-    span.textContent = label;
-    const strong = document.createElement('strong');
-    strong.textContent = value;
-    item.append(span, strong);
-    summary.append(item);
+  const amazon = bom.amazonAlternative;
+  const checkedAt = new Date(`${amazon.checkedAt}T00:00:00Z`).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
   });
+
+  const drawSummary = () => {
+    summary.textContent = '';
+    const values = sourceMode === 'amazon'
+      ? [
+        ['Grand total', money(amazon.totals.grand, amazon.currency)],
+        ['Amazon basket', money(amazon.totals.amazonBasket, amazon.currency)],
+        ['Specialist motors', money(amazon.totals.currentSuppliers, amazon.currency)],
+        ['Vs current BOM (converted)', `+${money(amazon.totals.difference, amazon.currency)} (${amazon.totals.differencePercent}%)`],
+      ]
+      : [
+        ['Grand total', money(bom.totals.grand)],
+        ['Units counted', bom.totals.units],
+        ['Categories', bom.categories.length],
+        ['Estimate', 'Core arm parts'],
+      ];
+
+    values.forEach(([label, value]) => {
+      const item = document.createElement('div');
+      const span = document.createElement('span');
+      span.textContent = label;
+      const strong = document.createElement('strong');
+      strong.textContent = value;
+      item.append(span, strong);
+      summary.append(item);
+    });
+  };
+
+  const valueWithNote = (value, note) => {
+    const wrapper = document.createElement('span');
+    wrapper.append(text(value));
+    if (note) {
+      const small = document.createElement('small');
+      small.textContent = note;
+      wrapper.append(small);
+    }
+    return wrapper;
+  };
 
   const drawItems = () => {
     tableBody.textContent = '';
@@ -86,26 +118,52 @@ const renderBom = async () => {
       const row = document.createElement('tr');
       const useAmazon = sourceMode === 'amazon' && item.category !== 'Motors' && item.amazonLink;
       const selectedLink = useAmazon ? item.amazonLink : item.link;
-      const source = selectedLink
-        ? Object.assign(document.createElement('a'), {
+      const source = document.createElement('span');
+      if (selectedLink) {
+        const link = Object.assign(document.createElement('a'), {
           href: selectedLink.startsWith('http') ? selectedLink : `https://${selectedLink}`,
           textContent: useAmazon ? 'Amazon' : 'Open',
           target: '_blank',
           rel: 'noreferrer',
-        })
-        : document.createElement('span');
-      if (!selectedLink) source.textContent = 'TBC';
+        });
+        if (sourceMode === 'amazon' && !useAmazon) link.textContent = 'Specialist';
+        source.append(link);
+      } else {
+        source.textContent = sourceMode === 'amazon' && item.category === 'Motors'
+          ? 'Specialist quote'
+          : 'TBC';
+      }
+      if (useAmazon && item.amazonPrime) {
+        const small = document.createElement('small');
+        small.textContent = 'Prime eligible when checked';
+        source.append(small);
+      }
 
-      if (sourceMode === 'amazon' && !useAmazon && selectedLink) {
-        source.textContent = item.category === 'Motors' ? 'Specialist' : 'Current only';
+      let unitPrice = money(item.unitPrice);
+      let totalPrice = money(item.total);
+      if (sourceMode === 'amazon' && item.category === 'Motors') {
+        unitPrice = valueWithNote(
+          money(item.unitPrice / amazon.fx.gbpToUsd, amazon.currency),
+          'converted from USD',
+        );
+        totalPrice = money(item.total / amazon.fx.gbpToUsd, amazon.currency);
+      } else if (useAmazon && item.amazonIncluded) {
+        unitPrice = valueWithNote('Included', item.amazonIncluded);
+        totalPrice = '£0.00';
+      } else if (useAmazon) {
+        unitPrice = valueWithNote(
+          money(item.amazonPrice, amazon.currency),
+          item.amazonPack,
+        );
+        totalPrice = money(item.amazonTotal, amazon.currency);
       }
 
       [
         item.name,
         item.category,
-        money(item.unitPrice),
+        unitPrice,
         String(item.quantity),
-        money(item.total),
+        totalPrice,
         source,
       ].forEach(value => {
         const td = document.createElement('td');
@@ -125,13 +183,16 @@ const renderBom = async () => {
       });
       if (sourceNote) {
         sourceNote.textContent = sourceMode === 'amazon'
-          ? 'Amazon UK links are shown where available. Motors and specialist electronics keep their current sources; prices remain the original estimates.'
-          : 'Prices are the original BOM estimates. Switching source changes eligible links only.';
+          ? `Amazon UK prices and Prime filter checked ${checkedAt}. Motors keep their specialist sources and are converted at £1 = $${amazon.fx.gbpToUsd} (${amazon.fx.source}, ${amazon.fx.asOf}). Recheck price and Prime at checkout.`
+          : 'Original BOM estimates in USD. Quantities are the number required for one arm.';
       }
+      if (priceHeading) priceHeading.textContent = sourceMode === 'amazon' ? 'Pack / listing' : 'Unit';
+      drawSummary();
       drawItems();
     });
   });
 
+  drawSummary();
   drawItems();
 };
 
